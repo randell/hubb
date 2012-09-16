@@ -1,11 +1,9 @@
 from twisted.internet import defer
-from twisted.web import server, resource
 
 from urllib import urlencode
-from urllib2 import urlopen, Request
 
-from miyamoto import test
-from miyamoto.test import mocks
+from hubb import test
+from hubb.test import mocks
 
 class TestPubSub(test.SiteTestCase):
     def setUp(self):

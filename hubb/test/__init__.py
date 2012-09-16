@@ -5,12 +5,12 @@ from twisted.protocols.policies import WrappingFactory
 
 from urllib2 import urlopen, Request
 
-from miyamoto.web import MiyamotoResource
+from hubb.web import HubbResource
 
 class SiteTestCase(unittest.TestCase):
     def setUp(self):
         self.cleanupServerConnections = 0
-        self.site = server.Site(MiyamotoResource.setup(), timeout=None)
+        self.site = server.Site(HubbResource.setup(), timeout=None)
         self.wrapper = WrappingFactory(self.site)
         self.port = reactor.listenTCP(0, self.wrapper, interface="127.0.0.1")
         self.portno = self.port.getHost().port

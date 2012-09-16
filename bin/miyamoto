@@ -8,11 +8,11 @@ from optparse import OptionParser
 
 sys.path.append('.')
 
-from miyamoto.web import MiyamotoResource
+from hubb.web import HubbResource
 
 parser = OptionParser()
 parser.add_option('--port', '-p',
-                  help="Port number for Miyamoto's HTTP server (default 8080)",
+                  help="Port number for Hubb's HTTP server (default 8080)",
                   default=8080, type='int')
 parser.add_option('--verbose', '-v', help="Show http activity",
                   action="store_true")
@@ -21,6 +21,6 @@ opts, args = parser.parse_args()
 if opts.verbose:
     log.startLogging(sys.stdout)
 
-reactor.listenTCP(opts.port, Site(MiyamotoResource.setup()))
+reactor.listenTCP(opts.port, Site(HubbResource.setup()))
 reactor.run()
 

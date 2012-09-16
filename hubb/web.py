@@ -3,10 +3,10 @@ from twisted.python.util import sibpath
 from twisted.web import client, error, http, static
 from twisted.web.resource import Resource
 
-from miyamoto import pubsub, stream
+from hubb import pubsub, stream
 
 
-class MiyamotoResource(Resource):
+class HubbResource(Resource):
     isLeaf = False
     
     def getChild(self, name, request):

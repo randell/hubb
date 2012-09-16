@@ -6,9 +6,6 @@ from twisted.internet import defer, reactor
 import urllib
 import time
 
-from miyamoto import queue
-#from miyamoto import stream
-
 # TODO: Make these configurable
 RETRIES = 3
 DELAY_MULTIPLIER = 5
